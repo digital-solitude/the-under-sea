@@ -8,103 +8,15 @@
     <!-- Locomotive Scroll CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
-    <style>
-        /* RESET + DISABLE native scroll so Locomotive can handle it */
-        html,
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            /* Locomotive intercepts scroll */
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Prevent horizontal overflow from wide elements */
-        body * {
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        /* The container for Locomotive scrolling */
-        [data-scroll-container] {
-            position: relative;
-            height: auto;
-            /* Let it expand with content */
-            width: 100%;
-        }
-
-        /* Each scroll section is 100vh tall, so we see multiple "screens" */
-        [data-scroll-section] {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            padding: 2rem;
-            color: #fff;
-            text-align: center;
-        }
-
-        /* Example: style for your letter container */
-        .c-lerp-block_title {
-            font-size: 3rem;
-            line-height: 1;
-            display: inline-block;
-        }
-
-        .c-lerp-block_title span {
-            display: inline-block;
-            /* Each letter is inline-block so delays can apply individually */
-            margin-right: 2px;
-        }
-
-        /* A fixed background video behind everything (optional) */
-        .fixedVideo {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            overflow: hidden;
-            background: black;
-        }
-
-        .fixedVideo video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .dark {
-            background-color: black;
-        }
-
-        .fade-in {
-            opacity: 0;
-            transition: opacity 3s ease;
-        }
-
-        .fade-in.is-inview {
-            /* This will fade from 0 -> 1 */
-            opacity: 1;
-        }
-
-        /* Basic responsive text scaling, optional */
-        @media (max-width: 768px) {
-            [data-scroll-section] {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
+    <!-- link style.css -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- An optional fixed background video -->
+    <!-- A fixed background video -->
     <div class="fixedVideo">
-        <video src="images/UnderSeaSurface.mp4" autoplay loop muted></video>
+        <video src="videos/dive.mp4" autoplay loop muted></video>
     </div>
 
     <!-- Locomotive Scroll container -->
@@ -118,16 +30,23 @@
             </p>
         </section>
 
-        <!-- Show something moving left-to-right -->
+        <!-- A section with text AND a GIF going right-to-left -->
         <section data-scroll-section>
-            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
-                style="color: white; padding: 1rem;">
-                this moves left-to-right as you scroll down
+            <div class="scroll-gif-container" id="gif-scroll-target">
+                <!-- A paragraph that might move slightly or stay still -->
+                <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target">
+                    Some text that goes here. There will also be an image moving with it.
+                </p>
+
+                <!-- The GIF going from right to left -->
+                <img src="images/illustrations/1847_butuan.gif" alt="Butuan Expedition GIF" data-scroll
+                    data-scroll-direction="horizontal" data-scroll-speed="-5" data-scroll-target="#gif-scroll-target"
+                    class="butuan-gif" />
             </div>
         </section>
 
         <!-- each letter has its own vertical scrolling -->
-        <section data-scroll-section class="dark">
+        <section data-scroll-section class="">
             <span class="c-lerp-block_title" data-scroll>
                 <!-- Each letter has its own speed or delay -->
                 <span data-scroll data-scroll-delay="0.13" data-scroll-speed="1">B</span>
@@ -141,6 +60,23 @@
                 <span data-scroll data-scroll-delay="0.05" data-scroll-speed="9">r</span>
             </span>
         </section>
+
+        <!-- now moving left to right -->
+        <section data-scroll-section>
+            <div class="scroll-gif-container" id="gif-scroll-target2">
+                <!-- A paragraph that might move slightly or stay still -->
+                <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target2">
+                    Some text that goes here. There will also be an image moving with it.
+                </p>
+
+                <!-- The GIF going from right to left -->
+                <img src="images/mpc/MPC_Gold.gif" alt="Butuan Expedition GIF" data-scroll
+                    data-scroll-direction="horizontal" data-scroll-speed="5" data-scroll-target="#gif-scroll-target2"
+                    class="butuan-gif" />
+            </div>
+        </section>
+
+
 
 
         <!-- horizontal scrolling -->
@@ -167,6 +103,149 @@
 
         </section>
 
+        <!-- Paragraph with each letter having its own vertical scrolling (speeds & delays) -->
+        <section data-scroll-section class="dark">
+            <span class="c-lerp-block_title" data-scroll>
+
+                <!-- "This is a longer test in which each character has its own buoyancy" -->
+
+                <!-- T -->
+                <span data-scroll data-scroll-delay="0.30" data-scroll-speed="1">T</span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.29" data-scroll-speed="2">h</span>
+                <!-- i -->
+                <span data-scroll data-scroll-delay="0.28" data-scroll-speed="3">i</span>
+                <!-- s -->
+                <span data-scroll data-scroll-delay="0.27" data-scroll-speed="4">s</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.26" data-scroll-speed="5"> </span>
+                <!-- i -->
+                <span data-scroll data-scroll-delay="0.25" data-scroll-speed="6">i</span>
+                <!-- s -->
+                <span data-scroll data-scroll-delay="0.24" data-scroll-speed="7">s</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.23" data-scroll-speed="8"> </span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.22" data-scroll-speed="9">a</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.21" data-scroll-speed="10"> </span>
+                <!-- l -->
+                <span data-scroll data-scroll-delay="0.20" data-scroll-speed="1">l</span>
+                <!-- o -->
+                <span data-scroll data-scroll-delay="0.19" data-scroll-speed="2">o</span>
+                <!-- n -->
+                <span data-scroll data-scroll-delay="0.18" data-scroll-speed="3">n</span>
+                <!-- g -->
+                <span data-scroll data-scroll-delay="0.17" data-scroll-speed="4">g</span>
+                <!-- e -->
+                <span data-scroll data-scroll-delay="0.16" data-scroll-speed="5">e</span>
+                <!-- r -->
+                <span data-scroll data-scroll-delay="0.15" data-scroll-speed="6">r</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.14" data-scroll-speed="7"> </span>
+                <!-- t -->
+                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="8">t</span>
+                <!-- e -->
+                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="9">e</span>
+                <!-- s -->
+                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="10">s</span>
+                <!-- t -->
+                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="1">t</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="2"> </span>
+                <!-- i -->
+                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="3">i</span>
+                <!-- n -->
+                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="4">n</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="5"> </span>
+                <!-- w -->
+                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="6">w</span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="7">h</span>
+                <!-- i -->
+                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="8">i</span>
+                <!-- c -->
+                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="9">c</span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="10">h</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="1"> </span>
+                <!-- e -->
+                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="2">e</span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="3">a</span>
+                <!-- c -->
+                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="4">c</span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="5">h</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="6"> </span>
+                <!-- c -->
+                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="7">c</span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="8">h</span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="9">a</span>
+                <!-- r -->
+                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="10">r</span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="1">a</span>
+                <!-- c -->
+                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="2">c</span>
+                <!-- t -->
+                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="3">t</span>
+                <!-- e -->
+                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="4">e</span>
+                <!-- r -->
+                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="5">r</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="6"> </span>
+                <!-- h -->
+                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="7">h</span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="8">a</span>
+                <!-- s -->
+                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="9">s</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="10"> </span>
+                <!-- i -->
+                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="1">i</span>
+                <!-- t -->
+                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="2">t</span>
+                <!-- s -->
+                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="3">s</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="4"> </span>
+                <!-- o -->
+                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="5">o</span>
+                <!-- w -->
+                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="6">w</span>
+                <!-- n -->
+                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="7">n</span>
+                <!-- space -->
+                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="8"> </span>
+                <!-- b -->
+                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="9">b</span>
+                <!-- u -->
+                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="10">u</span>
+                <!-- o -->
+                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="1">o</span>
+                <!-- y -->
+                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="2">y</span>
+                <!-- a -->
+                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="3">a</span>
+                <!-- n -->
+                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="4">n</span>
+                <!-- c -->
+                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="5">c</span>
+                <!-- y -->
+                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="6">y</span>
+
+            </span>
+        </section>
+
+
 
         <section data-scroll-section class="dark">
             <p data-scroll data-scroll-speed="2"><a href="">recover your breath</a></p>
@@ -177,25 +256,120 @@
     <!-- Locomotive Scroll JS -->
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
+    <!-- include main.js -->
+    <!-- <script src="main.js"></script> -->
+
     <script>
-        let locoScroll;
-
-        function initLocoScroll() {
-            locoScroll = new LocomotiveScroll({
-                el: document.querySelector('[data-scroll-container]'),
-                smooth: true
-            });
-        }
-
-        window.addEventListener('load', () => {
-            initLocoScroll();
+        // Initialize Locomotive Scroll
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('[data-scroll-container]'),
+            smooth: true
         });
 
         // On resize, update the locomotive instance to recalc positions
         window.addEventListener('resize', () => {
-            if (locoScroll) locoScroll.update();
+            if (scroll) scroll.update();
         });
+
+        // 1) Create the audio object
+        const audio = new Audio('sounds/Underwater-sounds-loopable.wav');
+        audio.loop = true;          // Make it loop
+        audio.volume = 0;           // Start at volume 0
+        let isPlaying = false;      // Track if we’re currently playing audio
+        let fadeInterval = null;    // For fade in / fade out intervals
+        let lastScrollTime = 0;     // When user last scrolled
+
+        // Fade in over ~1 second
+        function fadeInAudio() {
+            // If we’re already in a fadeInterval, clear it
+            if (fadeInterval) clearInterval(fadeInterval);
+
+            // If audio is paused, start playback
+            if (audio.paused) {
+                audio.play().catch(err => {
+                    console.warn('Audio playback failed:', err);
+                });
+            }
+            isPlaying = true;
+
+            const targetVolume = 1.0;  // Full volume
+            const fadeSteps = 10;      // We'll do 10 steps
+            const stepDuration = 100;  // 100ms per step => total ~1s
+            let currentStep = 0;
+
+            fadeInterval = setInterval(() => {
+                currentStep++;
+                // Calculate new volume
+                const newVolume = (currentStep / fadeSteps) * targetVolume;
+                audio.volume = Math.min(newVolume, targetVolume);
+
+                if (currentStep >= fadeSteps) {
+                    clearInterval(fadeInterval);
+                    fadeInterval = null;
+                }
+            }, stepDuration);
+        }
+
+        // Fade out over ~1 second, then pause
+        function fadeOutAudio() {
+            if (fadeInterval) clearInterval(fadeInterval);
+            isPlaying = false;
+
+            const initialVolume = audio.volume;
+            const fadeSteps = 10;
+            const stepDuration = 100;
+            let currentStep = 0;
+
+            fadeInterval = setInterval(() => {
+                currentStep++;
+                // Decrease volume from initialVolume down to 0
+                const newVolume = initialVolume * (1 - (currentStep / fadeSteps));
+                audio.volume = Math.max(newVolume, 0);
+
+                if (currentStep >= fadeSteps) {
+                    clearInterval(fadeInterval);
+                    fadeInterval = null;
+                    audio.pause();
+                }
+            }, stepDuration);
+        }
+
+        // when user scrolls...
+        scroll.on('scroll', () => {
+            // Track the time user last scrolled
+            lastScrollTime = Date.now();
+
+            console.log("scrolling");
+
+            // If not currently playing, fade in
+            if (!isPlaying) {
+                fadeInAudio();
+            }
+        });
+
+        document.body.addEventListener('click', () => {
+            // Track the time user last scrolled
+            lastScrollTime = Date.now();
+
+            // If not currently playing, fade in
+            if (!isPlaying) {
+                fadeInAudio();
+            }
+        });
+
+        // Check every 250ms if the user has been idle for 3 seconds
+        setInterval(() => {
+            if (isPlaying) {
+                const now = Date.now();
+                const elapsed = now - lastScrollTime;
+                // If 3s passed without scrolling, fade out
+                if (elapsed >= 3000) {
+                    fadeOutAudio();
+                }
+            }
+        }, 250);
     </script>
+
 </body>
 
 </html>
