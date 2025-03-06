@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Locomotive Scroll Responsive Example</title>
+
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
+
+    <style>
+        /* RESET + DISABLE native scroll so Locomotive can handle it */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            /* Locomotive intercepts scroll */
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Prevent horizontal overflow from wide elements */
+        body * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* The container for Locomotive scrolling */
+        [data-scroll-container] {
+            position: relative;
+            height: auto;
+            /* Let it expand with content */
+            width: 100%;
+        }
+
+        /* Each scroll section is 100vh tall, so we see multiple "screens" */
+        [data-scroll-section] {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            padding: 2rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        /* Example: style for your letter container */
+        .c-lerp-block_title {
+            font-size: 3rem;
+            line-height: 1;
+            display: inline-block;
+        }
+
+        .c-lerp-block_title span {
+            display: inline-block;
+            /* Each letter is inline-block so delays can apply individually */
+            margin-right: 2px;
+        }
+
+        /* A fixed background video behind everything (optional) */
+        .fixedVideo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: black;
+        }
+
+        .fixedVideo video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .dark {
+            background-color: black;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 3s ease;
+        }
+
+        .fade-in.is-inview {
+            /* This will fade from 0 -> 1 */
+            opacity: 1;
+        }
+
+        /* Basic responsive text scaling, optional */
+        @media (max-width: 768px) {
+            [data-scroll-section] {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- An optional fixed background video -->
+    <div class="fixedVideo">
+        <video src="images/UnderSeaSurface.mp4" autoplay loop muted></video>
+    </div>
+
+    <!-- Locomotive Scroll container -->
+    <div data-scroll-container>
+
+        <!-- Section 1 -->
+        <section data-scroll-section>
+            <h1 data-scroll>Section 1</h1>
+            <p data-scroll data-scroll-speed="3" style="color:grey">
+                This text moves faster (vertical parallax).
+            </p>
+        </section>
+
+        <!-- Show something moving left-to-right -->
+        <section data-scroll-section>
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
+                style="color: white; padding: 1rem;">
+                this moves left-to-right as you scroll down
+            </div>
+        </section>
+
+        <!-- each letter has its own vertical scrolling -->
+        <section data-scroll-section class="dark">
+            <span class="c-lerp-block_title" data-scroll>
+                <!-- Each letter has its own speed or delay -->
+                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="1">B</span>
+                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="2">y</span>
+                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="3"> </span>
+                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="4">L</span>
+                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="5">e</span>
+                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="6">t</span>
+                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="7">t</span>
+                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="8">e</span>
+                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="9">r</span>
+            </span>
+        </section>
+
+
+        <!-- horizontal scrolling -->
+        <section data-scroll-section class="dark">
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
+                style="color: white; padding: 1rem;">
+                <img src="images/sea/fish1.png">
+            </div>
+        </section>
+
+        <section data-scroll-section class="dark">
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="-15"
+                style="color: white; padding: 1rem;">
+                <img src="images/sea/fish2.png">
+            </div>
+        </section>
+
+        <!-- fade in -->
+        <!-- Section 2: Show fade-in with no parallax movement -->
+        <section data-scroll-section class="dark">
+            <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
+                I will fade away forever.
+            </p>
+
+        </section>
+
+
+        <section data-scroll-section class="dark">
+            <p data-scroll data-scroll-speed="2"><a href="">recover your breath</a></p>
+        </section>
+
+    </div>
+
+    <!-- Locomotive Scroll JS -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+
+    <script>
+        let locoScroll;
+
+        function initLocoScroll() {
+            locoScroll = new LocomotiveScroll({
+                el: document.querySelector('[data-scroll-container]'),
+                smooth: true
+            });
+        }
+
+        window.addEventListener('load', () => {
+            initLocoScroll();
+        });
+
+        // On resize, update the locomotive instance to recalc positions
+        window.addEventListener('resize', () => {
+            if (locoScroll) locoScroll.update();
+        });
+    </script>
+</body>
+
+</html>
