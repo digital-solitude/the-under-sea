@@ -245,6 +245,19 @@
             </span>
         </section>
 
+        <!-- stacking section -->
+        <section data-scroll data-scroll-section data-scroll-id="stack-section" class="dark" id="stack-section">
+
+            <div class="stack-container">
+                <img class="stack-gif" id="gif1" src="images/illustrations/1847_butuan.gif" alt="1847 butuan" />
+                <img class="stack-gif" id="gif2" src="images/illustrations/Caracoa.gif" alt="Caracoa" />
+                <img class="stack-gif" id="gif3" src="images/illustrations/Cuadro-Paleografico-de-Visayas.gif"
+                    alt="Visayas" />
+            </div>
+        </section>
+
+
+
 
 
         <section data-scroll-section class="dark">
@@ -266,40 +279,33 @@
             smooth: true
         });
 
-        // On resize, update the locomotive instance to recalc positions
+        // On resize, update the locomotive instance
         window.addEventListener('resize', () => {
             if (scroll) scroll.update();
         });
 
         // 1) Create the audio object
         const audio = new Audio('sounds/Underwater-sounds-loopable.wav');
-        audio.loop = true;          // Make it loop
-        audio.volume = 0;           // Start at volume 0
-        let isPlaying = false;      // Track if we’re currently playing audio
-        let fadeInterval = null;    // For fade in / fade out intervals
-        let lastScrollTime = 0;     // When user last scrolled
+        audio.loop = true;
+        audio.volume = 0;
+        let isPlaying = false;
+        let fadeInterval = null;
+        let lastScrollTime = 0;
 
-        // Fade in over ~1 second
         function fadeInAudio() {
-            // If we’re already in a fadeInterval, clear it
             if (fadeInterval) clearInterval(fadeInterval);
-
-            // If audio is paused, start playback
             if (audio.paused) {
-                audio.play().catch(err => {
-                    console.warn('Audio playback failed:', err);
-                });
+                audio.play().catch(err => console.warn('Audio playback failed:', err));
             }
             isPlaying = true;
 
-            const targetVolume = 1.0;  // Full volume
-            const fadeSteps = 10;      // We'll do 10 steps
-            const stepDuration = 100;  // 100ms per step => total ~1s
+            const targetVolume = 1.0;
+            const fadeSteps = 10;
+            const stepDuration = 100;
             let currentStep = 0;
 
             fadeInterval = setInterval(() => {
                 currentStep++;
-                // Calculate new volume
                 const newVolume = (currentStep / fadeSteps) * targetVolume;
                 audio.volume = Math.min(newVolume, targetVolume);
 
@@ -310,7 +316,6 @@
             }, stepDuration);
         }
 
-        // Fade out over ~1 second, then pause
         function fadeOutAudio() {
             if (fadeInterval) clearInterval(fadeInterval);
             isPlaying = false;
@@ -322,8 +327,7 @@
 
             fadeInterval = setInterval(() => {
                 currentStep++;
-                // Decrease volume from initialVolume down to 0
-                const newVolume = initialVolume * (1 - (currentStep / fadeSteps));
+                const newVolume = initialVolume * (1 - currentStep / fadeSteps);
                 audio.volume = Math.max(newVolume, 0);
 
                 if (currentStep >= fadeSteps) {
@@ -334,41 +338,66 @@
             }, stepDuration);
         }
 
-        // when user scrolls...
-        scroll.on('scroll', () => {
-            // Track the time user last scrolled
-            lastScrollTime = Date.now();
+        // Stack GIF references
+        const gif1 = document.getElementById('gif1');
+        const gif2 = document.getElementById('gif2');
+        const gif3 = document.getElementById('gif3');
+
+        let showedGif1 = false;
+        let showedGif2 = false;
+        let showedGif3 = false;
+
+        scroll.on('scroll', (obj) => {
 
             console.log("scrolling");
+            console.log("currentElements keys:", Object.keys(obj.currentElements));
 
-            // If not currently playing, fade in
+            // track scroll time
+            lastScrollTime = Date.now();
+
             if (!isPlaying) {
                 fadeInAudio();
+            }
+
+            // check if stack-section is visible
+            if (obj.currentElements['stack-section']) {
+                const progress = obj.currentElements['stack-section'].progress;
+                console.log('stack-section progress:', progress);
+
+                if (progress > 0.1 && !showedGif1) {
+                    gif1.classList.add('visible');
+                    showedGif1 = true;
+                }
+                if (progress > 0.3 && !showedGif2) {
+                    gif2.classList.add('visible');
+                    showedGif2 = true;
+                }
+                if (progress > 0.5 && !showedGif3) {
+                    gif3.classList.add('visible');
+                    showedGif3 = true;
+                }
             }
         });
 
         document.body.addEventListener('click', () => {
-            // Track the time user last scrolled
             lastScrollTime = Date.now();
-
-            // If not currently playing, fade in
             if (!isPlaying) {
                 fadeInAudio();
             }
         });
 
-        // Check every 250ms if the user has been idle for 3 seconds
         setInterval(() => {
             if (isPlaying) {
                 const now = Date.now();
                 const elapsed = now - lastScrollTime;
-                // If 3s passed without scrolling, fade out
                 if (elapsed >= 3000) {
                     fadeOutAudio();
                 }
             }
         }, 250);
+
     </script>
+
 
 </body>
 

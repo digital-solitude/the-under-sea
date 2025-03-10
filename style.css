@@ -59,6 +59,7 @@ body * {
     z-index: -1;
     overflow: hidden;
     background: black;
+    pointer-events: none;
 }
 
 .fixedVideo video {
@@ -92,6 +93,55 @@ a {
 
 a:hover {
     color: #000;
+}
+
+/* Each GIF is absolutely positioned inside the container */
+/* The container for the stacked GIFs */
+.stack-container {
+    position: relative;
+    /* for absolute-positioned children */
+    width: 80vw;
+    /* 80% of viewport width */
+    margin: 0 auto;
+    /* center the container horizontally */
+    /* The container will have no fixed height; 
+       each GIF will define height. 
+       Or you could set a min-height if needed. */
+}
+
+/* Each GIF is absolutely centered and starts hidden (opacity:0) */
+.stack-gif {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* center the image */
+    width: 80vw;
+    /* fill container width */
+    height: auto;
+    /* maintain aspect ratio */
+    opacity: 0;
+    /* hidden by default */
+    transition: opacity 0.6s ease;
+    /* fade in smoothly */
+}
+
+/* Make it visible when “visible” class is added */
+.stack-gif.visible {
+    opacity: 1;
+}
+
+/* Optionally, control layering with z-index if needed */
+#gif1 {
+    z-index: 1;
+}
+
+#gif2 {
+    z-index: 2;
+}
+
+#gif3 {
+    z-index: 3;
 }
 
 
