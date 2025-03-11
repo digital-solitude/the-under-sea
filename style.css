@@ -7,13 +7,22 @@ body {
     /* Locomotive intercepts scroll */
     width: 100%;
     height: 100%;
-    font-size: 16px;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* Prevent horizontal overflow from wide elements */
 body * {
     max-width: 100%;
     box-sizing: border-box;
+}
+
+p {
+    padding-left: 10px;
+}
+
+h2 {
+    font: size 100px;
 }
 
 /* The container for Locomotive scrolling */
@@ -31,6 +40,7 @@ body * {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 2rem;
     color: #fff;
     text-align: center;
@@ -38,7 +48,7 @@ body * {
 
 /* Example: style for your letter container */
 .c-lerp-block_title {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1;
     display: inline-block;
 }
@@ -59,7 +69,6 @@ body * {
     z-index: -1;
     overflow: hidden;
     background: black;
-    pointer-events: none;
 }
 
 .fixedVideo video {
@@ -69,7 +78,7 @@ body * {
 }
 
 .dark {
-    background-color: black;
+    background-color: transparent;
 }
 
 .fade-in {
@@ -143,7 +152,6 @@ a:hover {
 #gif3 {
     z-index: 3;
 }
-
 
 
 
