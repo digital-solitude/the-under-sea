@@ -338,6 +338,23 @@
             }, stepDuration);
         }
 
+        document.body.addEventListener('click', () => {
+            lastScrollTime = Date.now();
+            if (!isPlaying) {
+                fadeInAudio();
+            }
+        });
+
+        setInterval(() => {
+            if (isPlaying) {
+                const now = Date.now();
+                const elapsed = now - lastScrollTime;
+                if (elapsed >= 3000) {
+                    fadeOutAudio();
+                }
+            }
+        }, 250);
+
         // Stack GIF references
         const gif1 = document.getElementById('gif1');
         const gif2 = document.getElementById('gif2');
@@ -378,23 +395,6 @@
                 }
             }
         });
-
-        document.body.addEventListener('click', () => {
-            lastScrollTime = Date.now();
-            if (!isPlaying) {
-                fadeInAudio();
-            }
-        });
-
-        setInterval(() => {
-            if (isPlaying) {
-                const now = Date.now();
-                const elapsed = now - lastScrollTime;
-                if (elapsed >= 3000) {
-                    fadeOutAudio();
-                }
-            }
-        }, 250);
 
     </script>
 
