@@ -5,9 +5,6 @@
     <meta charset="UTF-8" />
     <title>Dive</title>
 
-    <!-- Meta tag for viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Locomotive Scroll CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
@@ -27,9 +24,19 @@
 
         <!-- Section 1 -->
         <section data-scroll-section>
+            <p data-scroll data-scroll-speed="1" style="color:white">
+               Click to begin the sound of descent. 
+            </p>
+            <p data-scroll data-scroll-speed="1" style="color:white">
+            As you scroll-dive, you may pause to hover. 
+             </p>
+        </section>
+
+        <!-- Section 2 -->
+        <section data-scroll-section>
             <h1 data-scroll>Sa sinugdanan </h1>
             <p data-scroll data-scroll-speed="3" style="color:white">
-                In the beginning
+                        In the beginning
             </p>
         </section>
 
@@ -38,11 +45,11 @@
             <div class="scroll-gif-container" id="gif-scroll-target">
                 <!-- A paragraph that might move slightly or stay still -->
                 <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target">
-                    in the middle of the night
+                    all searching eye for truth
                 </p>
 
                 <!-- The GIF going from right to left -->
-                <img src="images/illustrations/1847_butuan.gif" alt="Butuan Expedition GIF" data-scroll
+                <img src="images/illustrations/Caracoa.gif" alt="Butuan Expedition GIF" data-scroll
                     data-scroll-direction="horizontal" data-scroll-speed="-5" data-scroll-target="#gif-scroll-target"
                     class="butuan-gif" />
             </div>
@@ -52,7 +59,7 @@
             <div class="scroll-gif-container" id="gif-scroll-target">
                 <!-- A paragraph that might move slightly or stay still -->
                 <p data-scroll data-scroll-speed="2" data-scroll-target="#gif-scroll-target">
-                    idols burned up
+                    in the computation of time
                 </p>
             </div>
         </section>
@@ -80,16 +87,30 @@
             <div class="scroll-gif-container" id="gif-scroll-target2">
                 <!-- A paragraph that might move slightly or stay still -->
                 <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target2">
-                    Some text that goes here. There will also be an image moving with it.
+                    we entered by storm, preserved by plunder
                 </p>
 
                 <!-- The GIF going from right to left -->
-                <img src="images/mpc/MPC_Gold.gif" alt="Butuan Expedition GIF" data-scroll
+                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/MPC_Gold.gif" alt="MPC_Gold" data-scroll
                     data-scroll-direction="horizontal" data-scroll-speed="5" data-scroll-target="#gif-scroll-target2"
-                    class="butuan-gif" />
+                    class="MPC_Gold" /></a>
             </div>
         </section>
 
+  <!-- A section with text AND a GIF going right-to-left -->
+  <section data-scroll-section>
+    <div class="scroll-gif-container" id="gif-scroll-target">
+        <!-- A paragraph that might move slightly or stay still -->
+        <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target">
+            threatened to be put by the sword
+        </p>
+
+        <!-- The GIF going from right to left -->
+        <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/sword.gif" alt="sword" data-scroll
+            data-scroll-direction="horizontal" data-scroll-speed="-4" data-scroll-target="#gif-scroll-target"
+            class="sword"/></a>
+    </div>
+</section>
 
 
 
@@ -108,173 +129,59 @@
             </div>
         </section>
 
-        <!-- fade in -->
-        <!-- Section 2: Show fade-in with no parallax movement -->
         <section data-scroll-section class="dark">
-            <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
-                I will fade away forever.
-            </p>
-
-        </section>
-
-        <!-- Paragraph with each letter having its own vertical scrolling (speeds & delays) -->
-        <section data-scroll-section class="dark">
-            <span class="c-lerp-block_title" data-scroll>
-
-                <!-- "This is a longer test in which each character has its own buoyancy" -->
-
-                <!-- T -->
-                <span data-scroll data-scroll-delay="0.30" data-scroll-speed="1">T</span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.29" data-scroll-speed="2">h</span>
-                <!-- i -->
-                <span data-scroll data-scroll-delay="0.28" data-scroll-speed="3">i</span>
-                <!-- s -->
-                <span data-scroll data-scroll-delay="0.27" data-scroll-speed="4">s</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.26" data-scroll-speed="5"> </span>
-                <!-- i -->
-                <span data-scroll data-scroll-delay="0.25" data-scroll-speed="6">i</span>
-                <!-- s -->
-                <span data-scroll data-scroll-delay="0.24" data-scroll-speed="7">s</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.23" data-scroll-speed="8"> </span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.22" data-scroll-speed="9">a</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.21" data-scroll-speed="10"> </span>
-                <!-- l -->
-                <span data-scroll data-scroll-delay="0.20" data-scroll-speed="1">l</span>
-                <!-- o -->
-                <span data-scroll data-scroll-delay="0.19" data-scroll-speed="2">o</span>
-                <!-- n -->
-                <span data-scroll data-scroll-delay="0.18" data-scroll-speed="3">n</span>
-                <!-- g -->
-                <span data-scroll data-scroll-delay="0.17" data-scroll-speed="4">g</span>
-                <!-- e -->
-                <span data-scroll data-scroll-delay="0.16" data-scroll-speed="5">e</span>
-                <!-- r -->
-                <span data-scroll data-scroll-delay="0.15" data-scroll-speed="6">r</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.14" data-scroll-speed="7"> </span>
-                <!-- t -->
-                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="8">t</span>
-                <!-- e -->
-                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="9">e</span>
-                <!-- s -->
-                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="10">s</span>
-                <!-- t -->
-                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="1">t</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="2"> </span>
-                <!-- i -->
-                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="3">i</span>
-                <!-- n -->
-                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="4">n</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="5"> </span>
-                <!-- w -->
-                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="6">w</span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="7">h</span>
-                <!-- i -->
-                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="8">i</span>
-                <!-- c -->
-                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="9">c</span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="10">h</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="1"> </span>
-                <!-- e -->
-                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="2">e</span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="3">a</span>
-                <!-- c -->
-                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="4">c</span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="5">h</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="6"> </span>
-                <!-- c -->
-                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="7">c</span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="8">h</span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="9">a</span>
-                <!-- r -->
-                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="10">r</span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="1">a</span>
-                <!-- c -->
-                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="2">c</span>
-                <!-- t -->
-                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="3">t</span>
-                <!-- e -->
-                <span data-scroll data-scroll-delay="0.13" data-scroll-speed="4">e</span>
-                <!-- r -->
-                <span data-scroll data-scroll-delay="0.12" data-scroll-speed="5">r</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.11" data-scroll-speed="6"> </span>
-                <!-- h -->
-                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="7">h</span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="8">a</span>
-                <!-- s -->
-                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="9">s</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="10"> </span>
-                <!-- i -->
-                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="1">i</span>
-                <!-- t -->
-                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="2">t</span>
-                <!-- s -->
-                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="3">s</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="4"> </span>
-                <!-- o -->
-                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="5">o</span>
-                <!-- w -->
-                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="6">w</span>
-                <!-- n -->
-                <span data-scroll data-scroll-delay="0.10" data-scroll-speed="7">n</span>
-                <!-- space -->
-                <span data-scroll data-scroll-delay="0.09" data-scroll-speed="8"> </span>
-                <!-- b -->
-                <span data-scroll data-scroll-delay="0.08" data-scroll-speed="9">b</span>
-                <!-- u -->
-                <span data-scroll data-scroll-delay="0.07" data-scroll-speed="10">u</span>
-                <!-- o -->
-                <span data-scroll data-scroll-delay="0.06" data-scroll-speed="1">o</span>
-                <!-- y -->
-                <span data-scroll data-scroll-delay="0.05" data-scroll-speed="2">y</span>
-                <!-- a -->
-                <span data-scroll data-scroll-delay="0.04" data-scroll-speed="3">a</span>
-                <!-- n -->
-                <span data-scroll data-scroll-delay="0.03" data-scroll-speed="4">n</span>
-                <!-- c -->
-                <span data-scroll data-scroll-delay="0.02" data-scroll-speed="5">c</span>
-                <!-- y -->
-                <span data-scroll data-scroll-delay="0.01" data-scroll-speed="6">y</span>
-
-            </span>
-        </section>
-
-
-        <!-- stacking section -->
-        <section data-scroll data-scroll-section data-scroll-id="stack-section" class="dark" id="stack-section">
-
-            <div class="stack-container">
-                <img class="stack-gif" id="gif1" src="images/illustrations/1847_butuan.gif" alt="1847 butuan" />
-                <img class="stack-gif" id="gif2" src="images/illustrations/Caracoa.gif" alt="Caracoa" />
-                <img class="stack-gif" id="gif3" src="images/illustrations/Cuadro-Paleografico-de-Visayas.gif"
-                    alt="Visayas" />
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
+                style="color: white; padding: 1rem;">
+                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/handkerchief.gif"></a>
             </div>
         </section>
 
 
+        <!-- fade in -->
+        <!-- Section 2: Show fade-in with no parallax movement -->
         <section data-scroll-section class="dark">
-            <p data-scroll data-scroll-speed="2"><a href="freefall.html">recover your breath</a></p>
+            <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
+                the parallel betwixt us
+            </p>
         </section>
+
+        <section data-scroll-section class="dark">
+            <div data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
+                style="color: white; padding: 1rem;">
+                <img src="images/illustrations/badlit.gif">
+            </div>
+        </section>
+
+        <!-- now moving left to right -->
+        <section data-scroll-section>
+             <div class="scroll-gif-container" id="gif-scroll-target2">
+                 <!-- A paragraph that might move slightly or stay still -->
+                <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target2">
+                           my silence, perhaps, may be misconstrued
+                 </p>
+        
+        <!-- The GIF going from right to left -->
+            <img src="images/illustrations/Caracoa.gif" alt="caracoa" data-scroll
+                            data-scroll-direction="horizontal" data-scroll-speed="5" data-scroll-target="#gif-scroll-target2"
+                            class="caracoa"/>
+    </section>
+
+            <section data-scroll-section class="dark">
+                <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
+                    I will fade away forever. again. 
+                </p>
+            </section>
+
+
+        <!-- stacking section -->
+        <section data-scroll data-scroll-section data-scroll-id="stack-section" class="dark" id="stack-section">
+            <div class="stack-container">
+                <img class="stack-gif" id="gif1" src="images/mpc/gravemarker.gif" alt="gravemarker" width="300"/>
+                <img class="stack-gif" id="gif2" src="images/mpc/gravemarker2.gif" alt="gravemarker2" width="300"/>
+                <img class="stack-gif" id="gif3" src="images/mpc/brass2.gif" alt="brass1" width="300"/>
+            </div>
+        </section>
+
 
     </div>
 
@@ -285,16 +192,47 @@
     <!-- <script src="main.js"></script> -->
 
     <script>
-        // Initialize Locomotive Scroll
+        // Initialize Locomotive Scroll with mobile support
         const scroll = new LocomotiveScroll({
             el: document.querySelector('[data-scroll-container]'),
-            smooth: true
+            smooth: true,
+            smartphone: {
+                smooth: true,
+                horizontalGesture: true,
+                breakpoint: 767
+            },
+            tablet: {
+                smooth: true,
+                breakpoint: 1024
+            }
         });
 
         // On resize, update the locomotive instance
         window.addEventListener('resize', () => {
             if (scroll) scroll.update();
         });
+
+        // Handle touch events for mobile
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, false);
+
+        document.addEventListener('touchmove', (e) => {
+            touchEndY = e.touches[0].clientY;
+        }, false);
+
+        document.addEventListener('touchend', () => {
+            const touchDiff = touchStartY - touchEndY;
+            if (Math.abs(touchDiff) > 50) { // Minimum swipe distance
+                lastScrollTime = Date.now();
+                if (!isPlaying) {
+                    fadeInAudio();
+                }
+            }
+        }, false);
 
         // 1) Create the audio object
         const audio = new Audio('sounds/Underwater-sounds-loopable.wav');
@@ -372,15 +310,9 @@
         const gif2 = document.getElementById('gif2');
         const gif3 = document.getElementById('gif3');
 
-        let showedGif1 = false;
-        let showedGif2 = false;
-        let showedGif3 = false;
+        let sequenceStarted = false;
 
         scroll.on('scroll', (obj) => {
-
-            console.log("scrolling");
-            console.log("currentElements keys:", Object.keys(obj.currentElements));
-
             // track scroll time
             lastScrollTime = Date.now();
 
@@ -388,26 +320,32 @@
                 fadeInAudio();
             }
 
-            // check if stack-section is visible
-            if (obj.currentElements['stack-section']) {
+            // Check if stack-section is in view and sequence hasn't started
+            if (obj.currentElements['stack-section'] && !sequenceStarted) {
                 const progress = obj.currentElements['stack-section'].progress;
-                console.log('stack-section progress:', progress);
-
-                if (progress > 0.1 && !showedGif1) {
+                if (progress > 0.1) { // Section is at least 10% in view
+                    sequenceStarted = true;
+                    
+                    // Show first GIF immediately
                     gif1.classList.add('visible');
-                    showedGif1 = true;
-                }
-                if (progress > 0.3 && !showedGif2) {
-                    gif2.classList.add('visible');
-                    showedGif2 = true;
-                }
-                if (progress > 0.5 && !showedGif3) {
-                    gif3.classList.add('visible');
-                    showedGif3 = true;
+
+                    // Show second GIF after 2 seconds
+                    setTimeout(() => {
+                        gif2.classList.add('visible');
+                    }, 2000);
+
+                    // Show third GIF after 4 seconds
+                    setTimeout(() => {
+                        gif3.classList.add('visible');
+                    }, 4000);
+
+                    // go to freefall.html after 6 seconds
+                    setTimeout(() => {
+                        window.location.href = 'freefall.html';
+                    }, 6000);
                 }
             }
         });
-
     </script>
 
 </body>

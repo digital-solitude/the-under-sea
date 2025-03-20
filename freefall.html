@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <title>Freefall</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-</head>
-
-<body>
-
+  <body>
     <!-- A fixed background video -->
     <div class="fixedVideo">
-        <video src="videos/freefall.mp4" autoplay loop muted></video>
+      <video src="videos/freefall.mp4" autoplay muted playsinline></video>
     </div>
+    <button class="play-button" style="display: none">Freefall</button>
 
-</body>
+    <script>
+      const video = document.querySelector("video");
+      const playButton = document.querySelector(".play-button");
 
+      // Try to play the video automatically
+      video.play().catch(function (error) {
+        // If autoplay fails, show the play button
+        playButton.style.display = "block";
+      });
+
+      // Handle play button click
+      playButton.addEventListener("click", function () {
+        video.play();
+        playButton.style.display = "none"; // Hide the button after clicking
+      });
+
+      // Handle video end
+      video.addEventListener("ended", function () {
+        window.location.href = "recovery.html#bottom-anchor";
+      });
+    </script>
+  </body>
 </html>

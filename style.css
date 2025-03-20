@@ -104,6 +104,8 @@ a:hover {
     color: #000;
 }
 
+
+
 /* Each GIF is absolutely positioned inside the container */
 /* The container for the stacked GIFs */
 .stack-container {
@@ -118,6 +120,7 @@ a:hover {
        Or you could set a min-height if needed. */
 }
 
+
 /* Each GIF is absolutely centered and starts hidden (opacity:0) */
 .stack-gif {
     position: absolute;
@@ -125,7 +128,7 @@ a:hover {
     left: 50%;
     transform: translate(-50%, -50%);
     /* center the image */
-    width: 80vw;
+    width: 50vw;
     /* fill container width */
     height: auto;
     /* maintain aspect ratio */
@@ -135,7 +138,7 @@ a:hover {
     /* fade in smoothly */
 }
 
-/* Make it visible when “visible” class is added */
+/* Make it visible when "visible" class is added */
 .stack-gif.visible {
     opacity: 1;
 }
@@ -160,4 +163,24 @@ a:hover {
     [data-scroll-section] {
         font-size: 1.5rem;
     }
+}
+
+/* Play button styles */
+.play-button {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.play-button:hover {
+    background-color: rgba(255, 255, 255, 1);
 }
