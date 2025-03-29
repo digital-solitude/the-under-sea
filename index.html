@@ -20,12 +20,17 @@
         <video src="videos/UnderSeaSurface.mp4" autoplay loop></video>
     </div>
 
+    <!-- Autoplay overlay -->
+    <div id="autoplay-overlay" class="autoplay-overlay">
+        <button id="ready-button" class="ready-button">Ready</button>
+    </div>
+
     <!-- Locomotive Scroll container -->
     <div data-scroll-container>
 
         <!-- paragraph 0: introducing text -->
         <section data-scroll-section>
-             <div data-scroll>
+            <div data-scroll>
                 <p>The premodern archives of the islands known today as the Philippines,</p>
                 <p>swim in the archipelagic seas, connected by wires & whispers.</p>
                 <p>To prepare the descent, <span class="faded"><i>breathe...</i></span></p>
@@ -161,6 +166,18 @@
             if (scroll) scroll.update();
         });
 
+        // Handle video autoplay
+        const video = document.querySelector('.fixedVideo video');
+        const overlay = document.getElementById('autoplay-overlay');
+        const readyButton = document.getElementById('ready-button');
+
+        readyButton.addEventListener('click', () => {
+            video.play().then(() => {
+                overlay.style.display = 'none';
+            }).catch(error => {
+                console.log('Error playing video:', error);
+            });
+        });
     </script>
 
 </body>

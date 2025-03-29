@@ -184,3 +184,33 @@ a:hover {
 .play-button:hover {
     background-color: rgba(255, 255, 255, 1);
 }
+
+/* Autoplay overlay styles */
+.autoplay-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.ready-button {
+    padding: 15px 40px;
+    font-size: 24px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.ready-button:hover {
+    background-color: white;
+    color: black;
+}
