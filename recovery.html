@@ -1,253 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ubos Sa Dagat: The Under Sea</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Locomotive Scroll CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css"
-    />
+  <title>Ubos Sa Dagat: The Under Sea</title>
 
-    <!-- link style.css -->
-    <link rel="stylesheet" href="style.css" />
-  </head>
+  <!-- Locomotive Scroll CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.css" />
 
-  <body>
-    <!-- A fixed background video -->
-    <div class="fixedVideo">
-      <video src="videos/recovery.mp4" autoplay loop></video>
-    </div>
+  <!-- link style.css -->
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-    <!-- Locomotive Scroll container -->
-    <div data-scroll-container>
-      <section data-scroll-section>
-        <div data-scroll>
-          <a href="index.html">dive again</a>
-        </div>
-      </section>
+<body>
+  <!-- A fixed background video -->
+  <div class="fixedVideo">
+    <video autoplay loop></video>
+  </div>
 
-      <!-- paragraph 1: regular parallax scroll -->
-      <section data-scroll-section>
-        <div data-scroll>
-          <p>This is the opposite of the dive. .</p>
-          <p>This is the opposite of the dive.</p>
-          <p>This is the opposite of the dive.</p>
-          <p>This is the opposite of the <span class="faded">dive</span></p>
-        </div>
-      </section>
+  <!-- Locomotive Scroll container -->
+  <div data-scroll-container>
+    <section data-scroll-section>
+      <div data-scroll>
+        <a href="index.html">dive again</a>
+      </div>
+    </section>
 
-      <!-- paragraph 2: alternate left/right -->
-      <section data-scroll-section>
-        <div class="c-direction-block" id="scroll-text-container">
-          <p
-            class="c-direction-block_item"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="10"
-            data-scroll-target="#scroll-text-container"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            class="c-direction-block_item"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="-10"
-            data-scroll-target="#scroll-text-container"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            class="c-direction-block_item"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="10"
-            data-scroll-target="#scroll-text-container"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            class="c-direction-block_item"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="-10"
-            data-scroll-target="#scroll-text-container"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            class="c-direction-block_item"
-            data-scroll
-            data-scroll-direction="horizontal"
-            data-scroll-speed="10"
-            data-scroll-target="#scroll-text-container"
-          >
-            This is the opposite of the dive.
-          </p>
-        </div>
-      </section>
+    <!-- paragraph 1: regular parallax scroll -->
+    <section data-scroll-section>
+      <div data-scroll>
+        <p>This is the opposite of the dive. .</p>
+        <p>This is the opposite of the dive.</p>
+        <p>This is the opposite of the dive.</p>
+        <p>This is the opposite of the <span class="faded">dive</span></p>
+      </div>
+    </section>
 
-      <section data-scroll-section>
-        <div data-scroll-container>
-          <!-- blank section... -->
-        </div>
-      </section>
+    <!-- paragraph 2: alternate left/right -->
+    <section data-scroll-section>
+      <div class="c-direction-block" id="scroll-text-container">
+        <p class="c-direction-block_item" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10"
+          data-scroll-target="#scroll-text-container">
+          This is the opposite of the dive.
+        </p>
+        <p class="c-direction-block_item" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-10"
+          data-scroll-target="#scroll-text-container">
+          This is the opposite of the dive.
+        </p>
+        <p class="c-direction-block_item" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10"
+          data-scroll-target="#scroll-text-container">
+          This is the opposite of the dive.
+        </p>
+        <p class="c-direction-block_item" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-10"
+          data-scroll-target="#scroll-text-container">
+          This is the opposite of the dive.
+        </p>
+        <p class="c-direction-block_item" data-scroll data-scroll-direction="horizontal" data-scroll-speed="10"
+          data-scroll-target="#scroll-text-container">
+          This is the opposite of the dive.
+        </p>
+      </div>
+    </section>
 
-      <!-- paragraph 3: reverse Scrolling Section -->
-      <section data-scroll-section>
-        <div class="downward-scroll-container" id="downward-scroll">
-          <p
-            data-scroll
-            data-scroll-speed="2"
-            data-scroll-target="#downward-scroll"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="4"
-            data-scroll-target="#downward-scroll"
-          >
-            Hold [memories]
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="6"
-            data-scroll-target="#downward-scroll"
-          >
-            Hold [archives]
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="8"
-            data-scroll-target="#downward-scroll"
-          >
-            Hold [traditions]
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="10"
-            data-scroll-target="#downward-scroll"
-          >
-            Hold [text]
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="12"
-            data-scroll-target="#downward-scroll"
-          >
-            Exhale [spacebar].
-          </p>
-        </div>
-      </section>
+    <section data-scroll-section>
+      <div>
+        <!-- blank section... -->
+      </div>
+    </section>
 
-      <!-- paragraph 4: dynamic parallax scroll -->
-      <section data-scroll-section>
-        <div class="dynamic-parallax" id="parallax-2">
-          <p
-            data-scroll
-            data-scroll-speed="5"
-            data-scroll-delay="0.1"
-            data-scroll-target="#parallax-2"
-          >
-            This is the opposite of the dive.
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="4"
-            data-scroll-delay="0.2"
-            data-scroll-target="#parallax-2"
-            class="pulse"
-          >
-            Hold
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="3"
-            data-scroll-delay="0.3"
-            data-scroll-target="#parallax-2"
-            class="pulse"
-          >
-            Hold.
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="2"
-            data-scroll-delay="0.4"
-            data-scroll-target="#parallax-2"
-            class="pulse"
-          >
-            Hold..
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="1.5"
-            data-scroll-delay="0.5"
-            data-scroll-target="#parallax-2"
-            class="pulse"
-          >
-            Hold...
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="1"
-            data-scroll-delay="0.6"
-            data-scroll-target="#parallax-2"
-            class="pulse"
-          >
-            Hold.
-          </p>
-          <p
-            data-scroll
-            data-scroll-speed="8"
-            data-scroll-delay="0.2"
-            data-scroll-target="#parallax-2"
-            class="faded"
-          >
-            We're coming up.
-          </p>
-        </div>
-      </section>
-    </div>
+    <!-- paragraph 3: reverse Scrolling Section -->
+    <section data-scroll-section>
+      <div class="downward-scroll-container" id="downward-scroll">
+        <p data-scroll data-scroll-speed="2" data-scroll-target="#downward-scroll">
+          This is the opposite of the dive.
+        </p>
+        <p data-scroll data-scroll-speed="4" data-scroll-target="#downward-scroll">
+          Hold [memories]
+        </p>
+        <p data-scroll data-scroll-speed="6" data-scroll-target="#downward-scroll">
+          Hold [archives]
+        </p>
+        <p data-scroll data-scroll-speed="8" data-scroll-target="#downward-scroll">
+          Hold [traditions]
+        </p>
+        <p data-scroll data-scroll-speed="10" data-scroll-target="#downward-scroll">
+          Hold [text]
+        </p>
+        <p data-scroll data-scroll-speed="12" data-scroll-target="#downward-scroll">
+          Exhale [spacebar].
+        </p>
+      </div>
+    </section>
 
-    <!-- Locomotive Scroll JS -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
+    <!-- paragraph 4: dynamic parallax scroll -->
+    <section data-scroll-section>
+      <div class="dynamic-parallax" id="parallax-2">
+        <p data-scroll data-scroll-speed="5" data-scroll-delay="0.1" data-scroll-target="#parallax-2">
+          This is the opposite of the dive.
+        </p>
+        <p data-scroll data-scroll-speed="4" data-scroll-delay="0.2" data-scroll-target="#parallax-2" class="pulse">
+          Hold
+        </p>
+        <p data-scroll data-scroll-speed="3" data-scroll-delay="0.3" data-scroll-target="#parallax-2" class="pulse">
+          Hold.
+        </p>
+        <p data-scroll data-scroll-speed="2" data-scroll-delay="0.4" data-scroll-target="#parallax-2" class="pulse">
+          Hold..
+        </p>
+        <p data-scroll data-scroll-speed="1.5" data-scroll-delay="0.5" data-scroll-target="#parallax-2" class="pulse">
+          Hold...
+        </p>
+        <p data-scroll data-scroll-speed="1" data-scroll-delay="0.6" data-scroll-target="#parallax-2" class="pulse">
+          Hold.
+        </p>
+        <p data-scroll data-scroll-speed="8" data-scroll-delay="0.2" data-scroll-target="#parallax-2" class="faded">
+          We're coming up.
+        </p>
+      </div>
+    </section>
+  </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        // Initialize Locomotive Scroll with mobile support
-        const scroll = new LocomotiveScroll({
-          el: document.querySelector("[data-scroll-container]"),
-          smooth: true,
-          smartphone: {
-            smooth: true,
-            horizontalGesture: true,
-            breakpoint: 767,
-          },
-          tablet: {
-            smooth: true,
-            breakpoint: 1024,
-          },
-        });
+  <!-- Locomotive Scroll JS -->
+  <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
-        // On resize, update the locomotive instance
-        window.addEventListener("resize", () => {
-          if (scroll) scroll.update();
-        });
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Set video source based on device width
+      const video = document.querySelector('.fixedVideo video');
+      const isMobile = window.innerWidth <= 767;
+      video.src = isMobile ? 'videos/recovery_vertical.mp4' : 'videos/recovery.mp4';
 
-        // 2) Give Locomotive a moment to measure content
-        setTimeout(() => {
-          // 3) Scroll to the bottom with no animation (duration=0) or a short duration if you prefer
-          scroll.scrollTo("bottom", {
-            duration: 0,
-            disableLerp: true,
-          });
-        }, 300);
+      // Update video source on resize
+      window.addEventListener('resize', () => {
+        const isMobile = window.innerWidth <= 767;
+        video.src = isMobile ? 'videos/recovery_vertical.mp4' : 'videos/recovery.mp4';
       });
-    </script>
-  </body>
+
+      // Initialize Locomotive Scroll with mobile support
+      const scroll = new LocomotiveScroll({
+        el: document.querySelector("[data-scroll-container]"),
+        smooth: true,
+        smartphone: {
+          smooth: true,
+          horizontalGesture: true,
+          breakpoint: 767,
+        },
+        tablet: {
+          smooth: true,
+          breakpoint: 1024,
+        },
+      });
+
+      // On resize, update the locomotive instance
+      window.addEventListener("resize", () => {
+        if (scroll) scroll.update();
+      });
+
+      // Give Locomotive a moment to measure content
+      setTimeout(() => {
+        // Scroll to the bottom with no animation
+        scroll.scrollTo("bottom", {
+          duration: 0,
+          disableLerp: true,
+        });
+      }, 100);
+    });
+  </script>
+</body>
+
 </html>

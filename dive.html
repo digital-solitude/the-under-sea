@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <title>Dive</title>
 
     <!-- Locomotive Scroll CSS -->
@@ -18,7 +18,7 @@
 
     <!-- A fixed background video -->
     <div class="fixedVideo">
-        <video src="videos/dive.mp4" autoplay loop muted></video>
+        <video autoplay loop muted></video>
     </div>
 
     <!-- Locomotive Scroll container -->
@@ -27,18 +27,18 @@
         <!-- Section 1 -->
         <section data-scroll-section>
             <p data-scroll data-scroll-speed="1" style="color:white">
-               Click to begin the sound of descent. 
+                Click to begin the sound of descent.
             </p>
             <p data-scroll data-scroll-speed="1" style="color:white">
-            As you scroll-dive, you may pause to hover. 
-             </p>
+                As you scroll-dive, you may pause to hover.
+            </p>
         </section>
 
         <!-- Section 2 -->
         <section data-scroll-section>
             <h1 data-scroll>Sa sinugdanan </h1>
             <p data-scroll data-scroll-speed="3" style="color:white">
-                        In the beginning
+                In the beginning
             </p>
         </section>
 
@@ -93,26 +93,26 @@
                 </p>
 
                 <!-- The GIF going from right to left -->
-                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/MPC_Gold.gif" alt="MPC_Gold" data-scroll
-                    data-scroll-direction="horizontal" data-scroll-speed="5" data-scroll-target="#gif-scroll-target2"
-                    class="MPC_Gold" /></a>
+                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/MPC_Gold.gif" alt="MPC_Gold"
+                        data-scroll data-scroll-direction="horizontal" data-scroll-speed="5"
+                        data-scroll-target="#gif-scroll-target2" class="MPC_Gold" /></a>
             </div>
         </section>
 
-  <!-- A section with text AND a GIF going right-to-left -->
-  <section data-scroll-section>
-    <div class="scroll-gif-container" id="gif-scroll-target">
-        <!-- A paragraph that might move slightly or stay still -->
-        <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target">
-            threatened to be put by the sword
-        </p>
+        <!-- A section with text AND a GIF going right-to-left -->
+        <section data-scroll-section>
+            <div class="scroll-gif-container" id="gif-scroll-target">
+                <!-- A paragraph that might move slightly or stay still -->
+                <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target">
+                    threatened to be put by the sword
+                </p>
 
-        <!-- The GIF going from right to left -->
-        <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/sword.gif" alt="sword" data-scroll
-            data-scroll-direction="horizontal" data-scroll-speed="-4" data-scroll-target="#gif-scroll-target"
-            class="sword"/></a>
-    </div>
-</section>
+                <!-- The GIF going from right to left -->
+                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/sword.gif" alt="sword" data-scroll
+                        data-scroll-direction="horizontal" data-scroll-speed="-4"
+                        data-scroll-target="#gif-scroll-target" class="sword" /></a>
+            </div>
+        </section>
 
 
 
@@ -156,31 +156,30 @@
 
         <!-- now moving left to right -->
         <section data-scroll-section>
-             <div class="scroll-gif-container" id="gif-scroll-target2">
-                 <!-- A paragraph that might move slightly or stay still -->
+            <div class="scroll-gif-container" id="gif-scroll-target2">
+                <!-- A paragraph that might move slightly or stay still -->
                 <p data-scroll data-scroll-speed="1" data-scroll-target="#gif-scroll-target2">
-                           my silence, perhaps, may be misconstrued
-                 </p>
-        
-        <!-- The GIF going from right to left -->
-            <img src="images/illustrations/Caracoa.gif" alt="caracoa" data-scroll
-                            data-scroll-direction="horizontal" data-scroll-speed="5" data-scroll-target="#gif-scroll-target2"
-                            class="caracoa"/>
-    </section>
-
-            <section data-scroll-section class="dark">
-                <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
-                    I will fade away forever. again. 
+                    my silence, perhaps, may be misconstrued
                 </p>
-            </section>
+
+                <!-- The GIF going from right to left -->
+                <img src="images/illustrations/Caracoa.gif" alt="caracoa" data-scroll data-scroll-direction="horizontal"
+                    data-scroll-speed="5" data-scroll-target="#gif-scroll-target2" class="caracoa" />
+        </section>
+
+        <section data-scroll-section class="dark">
+            <p data-scroll data-scroll-class="fade-in" data-scroll-speed="0" style="font-size: 2rem;padding: 1rem;">
+                I will fade away forever. again.
+            </p>
+        </section>
 
 
         <!-- stacking section -->
         <section data-scroll data-scroll-section data-scroll-id="stack-section" class="dark" id="stack-section">
             <div class="stack-container">
-                <img class="stack-gif" id="gif1" src="images/mpc/gravemarker.gif" alt="gravemarker" width="300"/>
-                <img class="stack-gif" id="gif2" src="images/mpc/gravemarker2.gif" alt="gravemarker2" width="300"/>
-                <img class="stack-gif" id="gif3" src="images/mpc/brass2.gif" alt="brass1" width="300"/>
+                <img class="stack-gif" id="gif1" src="images/mpc/gravemarker.gif" alt="gravemarker" width="300" />
+                <img class="stack-gif" id="gif2" src="images/mpc/gravemarker2.gif" alt="gravemarker2" width="300" />
+                <img class="stack-gif" id="gif3" src="images/mpc/brass2.gif" alt="brass1" width="300" />
             </div>
         </section>
 
@@ -213,6 +212,21 @@
         window.addEventListener('resize', () => {
             if (scroll) scroll.update();
         });
+
+        // Handle video autoplay
+        const video = document.querySelector('.fixedVideo video');
+
+        // Set video source based on screen width
+        function setVideoSource() {
+            const isMobile = window.innerWidth <= 767;
+            video.src = isMobile ? 'videos/dive_vertical.mp4' : 'videos/dive.mp4';
+        }
+
+        // Set initial video source
+        setVideoSource();
+
+        // Update video source on resize
+        window.addEventListener('resize', setVideoSource);
 
         // Handle touch events for mobile
         let touchStartY = 0;
@@ -327,7 +341,7 @@
                 const progress = obj.currentElements['stack-section'].progress;
                 if (progress > 0.1) { // Section is at least 10% in view
                     sequenceStarted = true;
-                    
+
                     // Show first GIF immediately
                     gif1.classList.add('visible');
 
