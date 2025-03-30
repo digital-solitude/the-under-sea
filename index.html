@@ -17,7 +17,7 @@
 
     <!-- A fixed background video -->
     <div class="fixedVideo">
-        <video src="videos/UnderSeaSurface.mp4" autoplay loop></video>
+        <video loop></video>
     </div>
 
     <!-- Autoplay overlay -->
@@ -171,6 +171,19 @@
         const overlay = document.getElementById('autoplay-overlay');
         const readyButton = document.getElementById('ready-button');
 
+        // Set video source based on screen width
+        function setVideoSource() {
+            const isMobile = window.innerWidth <= 767;
+            video.src = isMobile ? 'videos/UnderSeaSurface_vertical.mp4' : 'videos/UnderSeaSurface.mp4';
+        }
+
+        // Set initial video source
+        setVideoSource();
+
+        // Update video source on resize
+        window.addEventListener('resize', setVideoSource);
+
+        // Handle play button click
         readyButton.addEventListener('click', () => {
             video.play().then(() => {
                 overlay.style.display = 'none';
