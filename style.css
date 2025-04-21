@@ -214,3 +214,37 @@ a:hover {
     background-color: white;
     color: black;
 }
+
+.horizontal-scroll-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.horizontal-scroll-container img {
+    display: inline-block;
+    max-width: none;
+}
+
+.sword {
+    width: 300px; /* Adjust this value based on your needs */
+    height: auto;
+}
+
+.hover-text-container {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    transform: translate(-50%, -50%);
+}
+
+.hover-text-container.visible {
+    opacity: 1;
+}

@@ -108,9 +108,11 @@
                 </p>
 
                 <!-- The GIF going from right to left -->
-                <a href="https://philippinestudies.uk/mapping/"><img src="images/mpc/sword.gif" alt="sword" data-scroll
-                        data-scroll-direction="horizontal" data-scroll-speed="-4"
-                        data-scroll-target="#gif-scroll-target" class="sword" /></a>
+                <div class="horizontal-scroll-container" data-scroll data-scroll-direction="horizontal" data-scroll-speed="-8">
+                    <a href="https://philippinestudies.uk/mapping/">
+                        <img src="images/mpc/sword.gif" alt="sword" class="sword" data-hovertext="sword test" />
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -190,7 +192,7 @@
     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@4.1.4/dist/locomotive-scroll.min.js"></script>
 
     <!-- include main.js -->
-    <!-- <script src="main.js"></script> -->
+    <script src="main.js"></script>
 
     <script>
         // Initialize Locomotive Scroll with mobile support
